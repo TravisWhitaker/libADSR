@@ -16,6 +16,7 @@ mpfr_t adsr_gen_square(adsr_gen_t gen);
 mpfr_t adsr_gen_triangle(adsr_gen_t gen);
 mpfr_t adsr_gen_sawtooth(adsr_gen_t gen);
 mpfr_t adsr_gen_sine(adsr_gen_t gen);
+mpfr_t adsr_gen_noise(adsr_gen_t gen);
 mpfr_t adsr_gen_custom_register(adsr_gen_t gen);
 mpfr_t adsr_gen_custom_function(adsr_gen_t gen);
 
