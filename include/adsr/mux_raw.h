@@ -13,7 +13,7 @@ typedef struct
 	unsigned char sample_rate;
 	unsigned int sample_buffer_size;
 	short *sample_buffer;
-	adsr_gen_t *init_gen;
+	adsr_gen_t *gen_root;
 	mpfr_t *tick;
 	mpfr_t *tick_inc;
 } adsr_mux_raw_t;

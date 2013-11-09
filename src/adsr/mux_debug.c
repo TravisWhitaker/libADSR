@@ -29,14 +29,14 @@ adsr_mux_debug_t *adsr_mux_debug_init(unsigned char init_bit_depth, unsigned int
 	output->sample_buffer = init_sample_buffer;
 
 	// Compute the tick increment value:
-	mpfr_t *init_tick_incr = malloc(sizeof(mpfr_t));
+	mpfr_t *init_tick_inc = malloc(sizeof(mpfr_t));
 	mpfr_t freq;
-	mpfr_init2(*init_tick_incr, TICK_PREC);
+	mpfr_init2(*init_tick_inc, TICK_PREC);
 	mpfr_init2(freq, TICK_PREC);
 	mpfr_set_ui(freq, output->sample_rate);
-	mpfr_ui_div(*init_tick_incr, 1, freq, MPFR_RNDN);
+	mpfr_ui_div(*init_tick_inc, 1, freq, MPFR_RNDN);
 
-	output->tick_incr = init_tick_incr;
+	output->tick_inc = init_tick_inc;
 	mpfr_clear(freq);
 
 	return output;
