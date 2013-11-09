@@ -1,22 +1,22 @@
 // libadsr Copyright (C) Travis Whitaker Stephen Demos 2013
 
-#ifndef ADSR_GENERATOR_H
-#define ADSR_GENERATOR_H
+#ifndef ADSR_GEN_H
+#define ADSR_GEN_H
 
 typedef struct
 {
 	mpfr_t freq;
-	mpfr_t (*gen_handler)(gen_t);
+	mpfr_t (*gen_handler)(*adsr_gen_t);
 	void *opt;
 	void *mod_next;
 	gen_t *gen_next;
-} gen_t;
+} adsr_gen_t;
 
-mpfr_t gen_square(gen_t gen);
-mpfr_t gen_triangle(gen_t gen);
-mpfr_t gen_sawtooth(gen_t gen);
-mpfr_t gen_sine(gen_t gen);
-mpfr_t gen_custom_register(gen_t gen);
-mpfr_t gen_custom_function(gen_t gen);
+mpfr_t adsr_gen_square(adsr_gen_t gen);
+mpfr_t adsr_gen_triangle(adsr_gen_t gen);
+mpfr_t adsr_gen_sawtooth(adsr_gen_t gen);
+mpfr_t adsr_gen_sine(adsr_gen_t gen);
+mpfr_t adsr_gen_custom_register(adsr_gen_t gen);
+mpfr_t adsr_gen_custom_function(adsr_gen_t gen);
 
 #endif
