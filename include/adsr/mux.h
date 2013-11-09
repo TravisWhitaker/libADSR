@@ -4,5 +4,6 @@
 #define ADSR_MUX_H
 
 #define TICK_PREC 128
+#define SAMPLE_PREC 64
 
 #endif
